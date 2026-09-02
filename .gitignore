@@ -1,0 +1,6 @@
+/target
+ui/target
+ui/public
+node_modules
+
+e2e/test-results
