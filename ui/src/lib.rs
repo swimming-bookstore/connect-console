@@ -30,13 +30,8 @@ fn App() -> impl IntoView {
     Effect::new(move |_| {
         apply_theme(&theme_now());
         spawn_local(async move {
-            loop {
-                if let Some(m) = get_json::<Me>("/api/auth/me").await {
-                    if me.get_untracked() != Some(m.clone()) {
-                        me.set(Some(m));
-                    }
-                }
-                gloo_timers::future::TimeoutFuture::new(2000).await;
+            if let Some(m) = get_json::<Me>("/api/auth/me").await {
+                me.set(Some(m));
             }
         });
     });

@@ -14,8 +14,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CLIENT = Path.home() / "connect-client"
-LAB_PY = CLIENT / "scripts" / "lab.py"
+LAB = Path.home() / "connect-lab"
+LAB_PY = LAB / "lab.py"
 OUT = ROOT / "docs" / "demo.mp4"
 VIDEO_DIR = ROOT / "target" / "demo"
 E2E = ROOT / "e2e"
@@ -98,7 +98,7 @@ def main() -> None:
         lab = subprocess.Popen(
             [sys.executable, str(LAB_PY)],
             start_new_session=True,
-            cwd=str(CLIENT),
+            cwd=str(LAB),
         )
         CHILDREN.append(lab)
         started_lab = True
