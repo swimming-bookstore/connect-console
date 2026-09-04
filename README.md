@@ -8,9 +8,11 @@ There is no stock CMS in this stack, so the console *is* a small one: collection
 - **admin** — people, machines, ACL, pending logins.
 - **member** — only their own machines.
 
-Does **not** dial the plane or carry App or Session. That is still `connect-client`.
+Does **not** dial the plane or carry App or Session. That is the laptop: `~/connect-client-web`, `~/connect-client-macos`, `~/connect-client-linux`.
 
-Screencast (product lab): `./scripts/record-demo.sh` → `docs/demo.mp4`.
+Product lab: `python3 ~/connect-lab/lab.py`.
+
+Screencast: `./scripts/record-demo.sh` → `docs/demo.mp4` (starts the lab if console is not already up).
 
 ```
 connect-console --config /etc/connect/connect.toml
